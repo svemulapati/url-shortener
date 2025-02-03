@@ -1,0 +1,28 @@
+<!-- filepath: /Users/sudeepnagvemulapati/url-shortener/src/templates/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="banner">
+            <h1>Contact</h1>
+        </div>
+        <p>If you have any questions, feel free to reach out to us at:</p>
+        <p>Email: <a href="mailto:svemulapati@gmx.com">svemulapati@gmx.com</a></p>
+    </div>
+</body>
+</html>

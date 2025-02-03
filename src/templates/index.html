@@ -1,0 +1,35 @@
+<!-- filepath: /Users/sudeepnagvemulapati/url-shortener/src/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="banner">
+            <h1>URL Shortener</h1>
+        </div>
+        <form method="POST">
+            <label for="long_url">Long URL:</label>
+            <input type="text" id="long_url" name="long_url" required>
+            <button type="submit">Shorten</button>
+        </form>
+        {% if short_url %}
+            <h2>Short URL:</h2>
+            <input type="text" value="{{ request.url_root }}{{ short_url }}" readonly>
+        {% endif %}
+    </div>
+</body>
+</html>
